@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="shortcut icon" href="img/rpsl.png" type="image/x-icon">
+    <title>RPS League</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <p>RPS Padre</p>
+        <img src="img/rpsl.png" alt="guante rps" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Buy</li>
+                <li>About</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1 class="hed">Rock, Papers and Scissors</h1>
+        <p>Choose wisely</p>
+        <section>
+            <div class="card">
+                <img src="img/rock.png" alt="rock">
+                <p><button onclick="play(value)" value="rock">Rock</button></p>
+            </div>
+            <div class="card">
+                <img src="img/paper.png" alt="paper">
+                <p><button onclick="play(value)" value="paper">Paper</button></p>
+            </div>
+            <div class="card sci">
+                <img src="img/scissors.png" alt="scissors">
+                <p><button onclick="play(value)" value="scissors">Scissors</button></p>
+            </div>
+        </section>
+        <article>
+            <h3>Point Counter</h3>
+            <div class="count">
+                In progress
+            </div>
+        </article>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
