@@ -30,13 +30,28 @@
 function play(value) {
     let compu = Math.random();
     let user = null;
+    let result = document.getElementById("result");
+    let choiceOne = document.getElementById("choice1");
+    let choiceTwo = document.getElementById("choice2");
+    let choiceThree = document.getElementById("choice3");
+    let usu = document.getElementById("user");
+    let pc = document.getElementById("pc");
 
     if (compu < 0.33) {
         compu = "rock";
+        choiceOne.classList.add("show");
+        choiceTwo.classList.remove("show");
+        choiceThree.classList.remove("show");
     } else if (compu < 0.66) {
         compu = "paper";
+        choiceTwo.classList.add("show");
+        choiceOne.classList.remove("show");
+        choiceThree.classList.remove("show");
     } else if (compu < 1) {
         compu = "scissors";
+        choiceThree.classList.add("show");
+        choiceOne.classList.remove("show");
+        choiceTwo.classList.remove("show");
     }
 
     switch(value) {
@@ -52,10 +67,23 @@ function play(value) {
     }
 
     if (user === compu) {
-        return alert("it's a tie " + user + " can't defeat " + compu);
+        result.innerHTML = "it's a tie " + user + " can't defeat " + compu;
     } else if (user === "rock" && compu === "scissors" || user === "paper" && compu === "rock" || user === "scissors" && compu === "paper") {
-        return alert(user + " wins");
+        u++;
+        usu.innerHTML = u;
+        result.innerHTML = user + " wins";
     } else {
-        alert(compu + " wins")
+        i++;
+        pc.innerHTML = i;
+        result.innerHTML = compu + " wins";
+    }
+
+    if (u === 5) {
+        alert("BASTA PELOUDO, NO TE DAS CUENTA QUE GANASTE?");
+    } else if (i === 5) {
+        alert("BASTA PELOUDO, NO TE DAS CUENTA QUE PERDISTE?");
     }
 }
+
+let u = 0;
+let i = 0;

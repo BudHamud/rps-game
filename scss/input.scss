@@ -3,17 +3,25 @@
 
 * {
     font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+}
+
+body {
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
 }
 
 header {
     display: flex;
     justify-content: space-around;
-    background-color: #0056bb;
+    background-color: #1D5C63;
     color: white;
     margin-bottom: 50px;
+    align-items: center;
     nav {
         ul {
             display: flex;
+            justify-content: center;
             gap: 20px;
             li {
                 list-style: none;
@@ -22,6 +30,10 @@ header {
     }
     .logo {
         display: flex;
+        align-items: center;
+        p {
+            margin-right: 8px;
+        }
         img {
             width: 50px;
         }
@@ -35,12 +47,18 @@ main {
     flex-direction: column;
     justify-items: center;
     text-align: center;
+    background-color: #125B50;
+    color: #FAF5E4;
     section {
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
         .card {
             position: relative;
+            img {
+                width: 250px;
+            }
             &:hover p {
                 display: block;
             }
@@ -58,42 +76,130 @@ main {
                 button {
                     color: red;
                     font-family: 'Koulen', cursive;
-                    width: 100px;
+                    width: 150px;
                     border: none;
                     background-color: black;
                     font-size: 35px;
                 }
             }
         }
-        .card.sci {
-            p {
-                width: 150px;
-                button {
-                    margin: 0 auto;
-                }
-            }
+    }
+    .pc-choice {
+        img {
+            width: 150px;
+            margin-left: 20px;
+            opacity: 0.5;
+        }
+        .show {
+            opacity: 1;
         }
     }
-    .count {
+    #count {
         width: 200px;
-        height: 100px;
+        height: 120px;
         border: solid gray 10px;
         background-color: black;
         color: white;
         margin: 0 auto;
         border-radius: 20px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        #number {
+            span {
+                margin: 5px;
+            }
+        }
     }
 }
 
 @media (max-width: 768px) {
     main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        section {
+            .card {
+                img {
+                    width: 150px;
+                }
+                p {
+                    display: block;
+                    width: 100px;
+                    height: 50px;
+                    background-color: transparent;
+                    button {
+                        font-size: 30px;
+                        width: 100px;
+                    }
+                }
+            }
+        }
+        .pc-choice {
+            img {
+                width: 70px;
+                margin-left: 10px;
+            }
+        }
+        .card.sci {
+            p {
+                width: 0px;
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    main {
+        section {
+            .card {
+                img {
+                    width: 100px;
+                }
+                p {
+                    display: block;
+                    width: 0px;
+                    height: 20px;
+                    background-color: transparent;
+                    button {
+                        font-size: 20px;
+                        width: 0px;
+                        position: absolute;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+        nav {
+            display: flex;
+            justify-items: flex-start;
+            ul {
+                gap: 10px;
+            }
+        }
+    }
+    main {
         section {
             .card {
                 p {
-                    display: block;
+                    right: 50%;
+                    button {
+                        font-size: 15px;
+                        width: 60px;
+                        position: absolute;
+                        right: 100%;
+                    }
                 }
             }
         }
