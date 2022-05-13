@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Noto+Sans&display=swap');
 
+
 * {
     font-family: 'Noto Sans', sans-serif;
     margin: 0;
@@ -25,6 +26,10 @@ header {
             gap: 20px;
             li {
                 list-style: none;
+            }
+            a {
+                text-decoration: none;
+                color: white;
             }
         }
     }
@@ -154,6 +159,17 @@ main {
 }
 
 @media (max-width: 425px) {
+    header {
+        flex-direction: column;
+        justify-content: center;
+        nav {
+            display: flex;
+            justify-items: flex-start;
+            ul {
+                gap: 10px;
+            }
+        }
+    }
     main {
         section {
             .card {
@@ -178,17 +194,7 @@ main {
 }
 
 @media (max-width: 320px) {
-    header {
-        flex-direction: column;
-        justify-content: center;
-        nav {
-            display: flex;
-            justify-items: flex-start;
-            ul {
-                gap: 10px;
-            }
-        }
-    }
+
     main {
         section {
             .card {
@@ -205,3 +211,6 @@ main {
         }
     }
 }
+
+@import "about";
+@import "instructions";

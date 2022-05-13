@@ -26,6 +26,10 @@ header nav ul {
 header nav ul li {
   list-style: none;
 }
+header nav ul a {
+  text-decoration: none;
+  color: white;
+}
 header .logo {
   display: flex;
   align-items: center;
@@ -135,6 +139,18 @@ main #count #number span {
   }
 }
 @media (max-width: 425px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  header nav {
+    display: flex;
+    justify-items: flex-start;
+  }
+  header nav ul {
+    gap: 10px;
+  }
+
   main section .card img {
     width: 100px;
   }
@@ -152,18 +168,6 @@ main #count #number span {
   }
 }
 @media (max-width: 320px) {
-  header {
-    flex-direction: column;
-    justify-content: center;
-  }
-  header nav {
-    display: flex;
-    justify-items: flex-start;
-  }
-  header nav ul {
-    gap: 10px;
-  }
-
   main section .card p {
     right: 50%;
   }
@@ -172,6 +176,29 @@ main #count #number span {
     width: 60px;
     position: absolute;
     right: 100%;
+  }
+}
+.about-main p {
+  margin: 20px 0;
+}
+.about-main a {
+  text-decoration: none;
+  color: #F59595;
+}
+
+.ins-main img {
+  width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .ins-main img {
+    width: 400px;
+  }
+}
+@media (max-width: 425px) {
+  .ins-main img {
+    width: 300px;
   }
 }
 

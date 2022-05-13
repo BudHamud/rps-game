@@ -1,0 +1,30 @@
+.ins-main {
+    img {
+        width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .ins-main {
+        img {
+            width: 400px;
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .ins-main {
+        img {
+            width: 300px;
+        }
+    }
+}
+
+// @media (max-width: 375px) {
+//     .ins-main {
+//         img {
+//             width: 200px;
+//         }
+//     }
+// }
