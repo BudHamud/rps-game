@@ -79,7 +79,7 @@ function play(value) {
     }
 
     if (u === 5) {
-        alert("BASTA PELOUDO, NO TE DAS CUENTA QUE GANASTE?");
+        alert("BASTA PELOUDO, NO TE DAS CUENTA QUE GANASTE?");cd
     } else if (i === 5) {
         alert("BASTA PELOUDO, NO TE DAS CUENTA QUE PERDISTE?");
     }
