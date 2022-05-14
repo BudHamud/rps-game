@@ -1,32 +1,3 @@
-// function card(value) {
-//     if (value == "rock") {
-//         return alert("You have selected: " + value)
-//     } else if (value === "paper") {
-//         return alert("You have selected: " + value)
-//     } else if (value === "scissors") {
-//         return alert(Math.random());
-//     } else {
-//         return alert(Math.random());
-//     }
-// }
-
-// function computerPlay() {
-//     let compu = Math.random();
-//     let count = document.getElementsByClassName("count");
-
-//     const rock = document.getElementsByClassName("rock");
-//     const paper = document.getElementsByClassName("paper");
-//     const scissors = document.getElementsByClassName("scissors");
-
-//     if (compu < 0.33) {
-//         return alert("rock");
-//     } else if (compu < 0.66) {
-//         return alert("paper");
-//     } else if (compu < 1) {
-//         return alert("scissors");
-//     }
-// }
-
 function play(value) {
     let compu = Math.random();
     let user = null;
@@ -36,6 +7,12 @@ function play(value) {
     let choiceThree = document.getElementById("choice3");
     let usu = document.getElementById("user");
     let pc = document.getElementById("pc");
+    let audio = document.getElementById("audiu")
+    let again = document.querySelector(".cont-again");
+    let rockS = document.getElementById("rock-s");
+    let paperS = document.getElementById("paper-s");
+    let scissorsS = document.getElementById("scissors-s");
+    
 
     if (compu < 0.33) {
         compu = "rock";
@@ -57,12 +34,27 @@ function play(value) {
     switch(value) {
         case "rock":
             user = "rock"
+            rockS.play()
+            paperS.pause()
+            paperS.currentTime = 0
+            scissorsS.pause()
+            scissorsS.currentTime = 0
             break;
         case "paper":
             user = "paper"
+            paperS.play()
+            scissorsS.pause()
+            scissorsS.currentTime = 0
+            rockS.pause()
+            rockS.currentTime = 0
             break;
         case "scissors":
             user = "scissors"
+            scissorsS.play()
+            rockS.pause()
+            rockS.currentTime = 0
+            paperS.pause()
+            paperS.currentTime = 0
             break;
     }
 
@@ -78,12 +70,45 @@ function play(value) {
         result.innerHTML = compu + " wins";
     }
 
+    
+    
+
     if (u === 5) {
-        alert("BASTA PELOUDO, NO TE DAS CUENTA QUE GANASTE?");cd
+        again.classList.add("come")
+        again.innerHTML = '<h3>You won!</h3> <button id="again" onclick="again()">Play Again</button>'
+        audio.play()
+        rockS.pause()
+        rockS.currentTime = 0
+        paperS.pause()
+        paperS.currentTime = 0
+        scissorsS.pause()
+        scissorsS.currentTime = 0
     } else if (i === 5) {
-        alert("BASTA PELOUDO, NO TE DAS CUENTA QUE PERDISTE?");
+        again.classList.add("come")
+        again.innerHTML = '<h3>You lose!</h3> <button id="again" onclick="again()">Play Again</button>'
+        audio.play()
+        rockS.pause()
+        rockS.currentTime = 0
+        paperS.pause()
+        paperS.currentTime = 0
+        scissorsS.pause()
+        scissorsS.currentTime = 0
     }
 }
 
 let u = 0;
 let i = 0;
+
+function again() {
+    let usu = document.getElementById("user");
+    let pc = document.getElementById("pc");
+    let again = document.querySelector(".cont-again");
+    var audio = document.getElementById("audiu")
+    u = 0
+    i = 0
+    usu.innerHTML = u;
+    pc.innerHTML = i;
+    again.classList.remove("come")
+    audio.pause()
+    audio.currentTime = 0;
+}
