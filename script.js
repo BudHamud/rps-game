@@ -75,7 +75,7 @@ function play(value) {
 
     if (u === 5) {
         again.classList.add("come")
-        again.innerHTML = '<h3>You won!</h3> <button id="again" onclick="again()">Play Again</button>'
+        again.innerHTML = '<h3>You lose!</h3> <img src="img/self.gif" alt=""> <button id="again" onclick="again()">Play Again</button>'
         audio.play()
         rockS.pause()
         rockS.currentTime = 0
@@ -85,7 +85,7 @@ function play(value) {
         scissorsS.currentTime = 0
     } else if (i === 5) {
         again.classList.add("come")
-        again.innerHTML = '<h3>You lose!</h3> <button id="again" onclick="again()">Play Again</button>'
+        again.innerHTML = '<h3>You lose!</h3> <img src="img/kaiji-cry.gif" alt=""> <button id="again" onclick="again()">Play Again</button>'
         audio.play()
         rockS.pause()
         rockS.currentTime = 0
