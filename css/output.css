@@ -18,6 +18,14 @@ header {
   margin-bottom: 50px;
   align-items: center;
 }
+header .container-h {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+header .container-h #icon {
+  display: none;
+}
 header nav ul {
   display: flex;
   justify-content: center;
@@ -34,15 +42,19 @@ header .logo {
   display: flex;
   align-items: center;
 }
-header .logo p {
-  margin-right: 8px;
+header .logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
 }
-header .logo img {
+header .logo a img {
   width: 50px;
+  margin-right: 8px;
 }
 
 main {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -50,6 +62,8 @@ main {
   text-align: center;
   background-color: #125B50;
   color: #FAF5E4;
+  border: solid brown 10px;
+  position: relative;
 }
 main section {
   display: flex;
@@ -84,7 +98,7 @@ main section .card button {
 }
 main .pc-choice img {
   width: 150px;
-  margin-left: 20px;
+  margin-left: 15px;
   opacity: 0.5;
 }
 main .pc-choice .show {
@@ -100,8 +114,9 @@ main #count {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  padding: 8px;
 }
 main #count #number span {
   margin: 5px;
@@ -139,7 +154,7 @@ main #count #number span {
 }
 .cont-again #again:hover, .cont-again #again:focus {
   animation-name: hover;
-  animation-duration: 500ms;
+  animation-duration: 600ms;
   animation-fill-mode: forwards;
 }
 @keyframes hover {
@@ -166,12 +181,30 @@ main #count #number span {
   margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-  main {
-    width: 100%;
+.show-icon {
+  display: block;
+  animation-duration: 1s;
+  animation-name: icon;
+}
+
+@keyframes icon {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 22%;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 992px) {
+  main {
+    width: 95%;
+  }
+}
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 20px;
+    line-height: 1.8;
+  }
   main section .card img {
     width: 150px;
   }
@@ -193,19 +226,34 @@ main #count #number span {
     width: 400px;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   header {
     flex-direction: column;
-    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+  header .container-h {
+    width: 100%;
+  }
+  header .container-h #icon {
+    display: block;
   }
   header nav {
-    display: flex;
-    justify-items: flex-start;
+    flex-direction: column;
+    display: none;
   }
   header nav ul {
-    gap: 10px;
+    flex-direction: column;
   }
 
+  main section .card img {
+    width: 120px;
+  }
+}
+@media (max-width: 425px) {
+  main {
+    width: 90%;
+  }
   main section .card img {
     width: 100px;
   }
@@ -218,11 +266,43 @@ main #count #number span {
   .cont-again img {
     width: 300px;
   }
+
+  @keyframes icon {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 31%;
+    }
+  }
+}
+@media (max-width: 375px) {
+  @keyframes icon {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 35%;
+    }
+  }
 }
 @media (max-width: 320px) {
+  main section .card img {
+    width: 90px;
+  }
   main section .card button {
     font-size: 20px;
     width: 60px;
+  }
+}
+@media (max-width: 320px) and (max-width: 375px) {
+  @keyframes icon {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 40%;
+    }
   }
 }
 .ins-main img {

@@ -70,12 +70,9 @@ function play(value) {
         result.innerHTML = compu + " wins";
     }
 
-    
-    
-
     if (u === 5) {
         again.classList.add("come")
-        again.innerHTML = '<h3>You lose!</h3> <img src="img/self.gif" alt=""> <button id="again" onclick="again()">Play Again</button>'
+        again.innerHTML = '<h3>You won!</h3> <img src="img/clap.gif" alt=""> <button id="again" onclick="again()">Play Again</button>'
         audio.play()
         rockS.pause()
         rockS.currentTime = 0
@@ -98,6 +95,8 @@ function play(value) {
 
 let u = 0;
 let i = 0;
+let icon = document.querySelector("#icon-i")
+let nav = document.querySelector("nav")
 
 function again() {
     let usu = document.getElementById("user");
@@ -112,3 +111,15 @@ function again() {
     audio.pause()
     audio.currentTime = 0;
 }
+
+let nam = 0;
+
+icon.addEventListener('click', function () {
+    if (nam === 0) {
+        nam++
+        nav.classList.add("show-icon")
+    } else {
+        nam--
+        nav.classList.remove("show-icon")
+    }
+})
