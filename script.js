@@ -7,7 +7,8 @@ function play(value) {
     let choiceThree = document.getElementById("choice3");
     let usu = document.getElementById("user");
     let pc = document.getElementById("pc");
-    let audio = document.getElementById("audiu")
+    let win = document.getElementById("win")
+    let loss = document.getElementById("loss")
     let again = document.querySelector(".cont-again");
     let rockS = document.getElementById("rock-s");
     let paperS = document.getElementById("paper-s");
@@ -73,7 +74,7 @@ function play(value) {
     if (u === 5) {
         again.classList.add("come")
         again.innerHTML = '<h3>You won!</h3> <img src="img/clap.gif" alt=""> <button id="again" onclick="again()">Play Again</button>'
-        audio.play()
+        win.play()
         rockS.pause()
         rockS.currentTime = 0
         paperS.pause()
@@ -82,8 +83,8 @@ function play(value) {
         scissorsS.currentTime = 0
     } else if (i === 5) {
         again.classList.add("come")
-        again.innerHTML = '<h3>You lose!</h3> <img src="img/kaiji-cry.gif" alt=""> <button id="again" onclick="again()">Play Again</button>'
-        audio.play()
+        again.innerHTML = '<h3>You lost!</h3> <img src="img/kaiji-cry.gif" alt=""> <button id="again" onclick="again()">Play Again</button>'
+        loss.play()
         rockS.pause()
         rockS.currentTime = 0
         paperS.pause()
@@ -102,14 +103,17 @@ function again() {
     let usu = document.getElementById("user");
     let pc = document.getElementById("pc");
     let again = document.querySelector(".cont-again");
-    var audio = document.getElementById("audiu")
+    var win = document.getElementById("win")
+    let loss = document.getElementById("loss")
     u = 0
     i = 0
     usu.innerHTML = u;
     pc.innerHTML = i;
     again.classList.remove("come")
-    audio.pause()
-    audio.currentTime = 0;
+    win.pause()
+    win.currentTime = 0;
+    loss.pause()
+    loss.currentTime = 0;
 }
 
 let nam = 0;
